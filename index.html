@@ -1,0 +1,415 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-05-07 16:39:30
+ * @LastEditTime: 2021-05-12 14:10:45
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \英雄联盟手游移动\index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>英雄联盟官网</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <!-- 菜单 -->
+    <link rel="stylesheet" href="./css/menu.css">
+    <!-- 弹框 -->
+    <link rel="stylesheet" href="./css/pop.css">
+    <!-- 页面 -->
+    <link rel="stylesheet" href="./css/page.css">
+    <!-- 第一页-敬请关注 -->
+    <link rel="stylesheet" href="./css/attend.css">
+    <!-- 第二页-新闻 -->
+    <link rel="stylesheet" href="./css/news.css">
+    <!-- 第三页-游戏页面 -->
+    <link rel="stylesheet" href="./css/games.css">
+    <script>
+        (function (){
+            function setFont() {
+                var html = document.documentElement; // 获取根元素
+                var designWidth = 750;    // 设计稿的宽度
+                html.style.fontSize = html.clientWidth / designWidth * 100 + 'px'; // 设置字体大小
+            }
+            setFont();
+            // 设备尺寸变化时，重新改变html的字体大小
+            window.onresize = setFont;
+        }) ();
+    </script>
+</head>
+<body>
+    <!-- 导航菜单 start -->
+    <div class="menu_container">
+        <div class="menu_title">
+            <a href="#" class="menu_logo">
+                <img src="./assets/logo.png" alt="">
+            </a>
+            <!-- 开关 start -->
+            <!-- menu_switch_expand -->
+            <div class="menu_switch">
+                
+            </div>
+            <!-- 开关 end -->
+            <div class="menu_attend" onclick="showPop('popAttend')">敬请关注</div>
+        </div>
+        <!-- 收缩菜单栏 start -->
+        <ol class="menu_nav">
+            <li onclick="showPage(0)">敬请关注</li>
+            <li onclick="showPage(1)">新闻咨询</li>
+            <li onclick="showPage(2)">游戏特色</li>
+            <li>
+                <a href="#">问题反馈</a>
+            </li>
+            <li onclick="showPop('popFaq')">FAQ</li>
+        </ol>
+        <!-- 收缩菜单栏 end -->
+    </div>
+    <!-- 导航菜单 end -->
+
+    <!-- 整页面 start -->
+    <div class="page_container">
+        <!-- 第一页 start -->
+        <div class="page">
+            <div class="attend_container">
+                <div class="attend_slogan">
+                    <span class="attend_play" onclick="showPop('popVideo')"></span>
+                </div>
+                <div class="attend_button"></div>
+                <div class="g_arrow"></div>
+            </div>
+        </div>
+        <!-- 第一页 end -->
+
+        <!-- 第二页 start -->
+        <div class="page">
+            <div class="news_container">
+                <!-- 轮播图 start -->
+                <div class="g_carousel_container" id="news_container">
+                    <ul class="g_carousel-list">
+                        <!-- <li>
+                            <a href="https://lolm.qq.com/m/news_detail.html?docid=8584324486918752329&amp;e_code=492513&amp;idataid=279688"
+                                target="_blank">
+                                <img src="https://ossweb-img.qq.com/upload/adw/image/20191015/80cbdbaff4a1aa009f61f9240a910933.jpeg">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://lolm.qq.com/m/news_detail.html?docid=13355407427466544705&amp;e_code=492506&amp;idataid=279689"
+                                target="_blank">
+                                <img src="https://ossweb-img.qq.com/upload/adw/image/20191015/696545e262f2cbe66a70f17bf49f81e0.jpeg">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://lolm.qq.com/m/news_detail.html?docid=15384999930905072890&amp;e_code=492507&amp;idataid=279690"
+                                target="_blank">
+                                <img src="https://ossweb-img.qq.com/upload/adw/image/20191018/3c910d44898d7221344718ef3b7c0a7e.jpeg">
+                            </a>
+                        </li> -->
+                    </ul>
+
+                    <!-- 指示器 start -->
+                    <ul class="g_carousel-indicator">
+                        <!-- <li class="selected"></li>
+                        <li class=""></li>
+                        <li class=""></li> -->
+                    </ul>
+                    <!-- 指示器 end -->
+                    
+                    <!-- 上箭头 start -->
+                    <!-- 状态切换class-disabled -->
+                    <!-- <div class="g_carousel_prev"></div> -->
+                    <!-- 上箭头 end -->
+                    
+                    <!-- 下箭头 start -->
+                    <!-- <div class="g_carousel_next"></div> -->
+                    <!-- 下箭头 end -->
+                </div>
+                <!-- 轮播图 end -->
+                <div class="news_bar">
+                    <a href="" class="news_title selected">新闻</a>
+                    <a href="https://lolm.qq.com/m/news_list.html" class="news_title">
+                        更多
+                    </a>
+                </div>
+                <ul class="news_list">
+                    <!-- <li>
+                        <span>LOL手游</span>
+                        <p>2021-03-31 10:06:39</p>
+                        <a href="https://lolm.qq.com/m/news_detail.html?docid=6621191489345717463" target="_blank">
+                            《英雄联盟手游》开发者日志：国服特辑
+                        </a>
+                    </li>
+                    <li>
+                        <span>新闻</span>
+                        <p>2021-02-11 17:20:56</p>
+                        <a href="https://lolm.qq.com/m/news_detail.html?docid=8804770001019449555" target="_blank">
+                            新春快乐 牛年大吉！
+                        </a>
+                    </li>
+                    <li>
+                        <span>公告</span>
+                        <p>2021-02-09 19:09:56</p>
+                        <a href="https://lolm.qq.com/m/news_detail.html?docid=5629269202349766663" target="_blank">
+                            《英雄联盟手游》正式开启官方预约
+                        </a>
+                    </li>
+                    <li>
+                        <span>公告</span>
+                        <p>2020-10-29 11:48:40</p>
+                        <a href="https://lolm.qq.com/m/news_detail.html?docid=3842629219720839681" target="_blank">
+                            关于《英雄联盟手游》不实宣传信息辟谣说明
+                        </a>
+                    </li> -->
+                </ul>
+                <div class="g_arrow"></div>
+            </div>
+        </div>
+        <!-- 第二页 end -->
+
+        <!-- 第三页 start -->
+        <div class="page">
+            <div class="games_container">
+                <!-- 轮播图 start -->
+                <div class="g_carousel_container" id="games_container">
+                    <ul class="g_carousel-list">
+                        <!-- <li>
+                                        <a href="https://lolm.qq.com/m/news_detail.html?docid=8584324486918752329&amp;e_code=492513&amp;idataid=279688"
+                                            target="_blank">
+                                            <img src="https://ossweb-img.qq.com/upload/adw/image/20191015/80cbdbaff4a1aa009f61f9240a910933.jpeg">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://lolm.qq.com/m/news_detail.html?docid=13355407427466544705&amp;e_code=492506&amp;idataid=279689"
+                                            target="_blank">
+                                            <img src="https://ossweb-img.qq.com/upload/adw/image/20191015/696545e262f2cbe66a70f17bf49f81e0.jpeg">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://lolm.qq.com/m/news_detail.html?docid=15384999930905072890&amp;e_code=492507&amp;idataid=279690"
+                                            target="_blank">
+                                            <img src="https://ossweb-img.qq.com/upload/adw/image/20191018/3c910d44898d7221344718ef3b7c0a7e.jpeg">
+                                        </a>
+                                    </li> -->
+                    </ul>
+            
+                    <!-- 指示器 start -->
+                    <ul class="g_carousel-indicator">
+                        <!-- <li class="selected"></li>
+                                    <li class=""></li>
+                                    <li class=""></li> -->
+                    </ul>
+                    <!-- 指示器 end -->
+            
+                    <!-- 上箭头 start -->
+                    <!-- 状态切换class-disabled -->
+                    <div class="g_carousel_prev"></div>
+                    <!-- 上箭头 end -->
+            
+                    <!-- 下箭头 start -->
+                    <div class="g_carousel_next"></div>
+                    <!-- 下箭头 end -->
+                </div>
+                <!-- 轮播图 end -->
+                <div class="game_desc">
+                    风靡全球的MOBA经典之作《英雄联盟》正版手游预约正式开启!
+                </div>
+                <div class="game_detail" onclick="showPop('popDetail')"></div>
+                <div class="game_brand">
+                    <div class="game_brand-item" onclick="showPop('popWeixin')"></div>
+                    <div class="game_brand-item" onclick="showPop('popYxq')"></div>
+                    <a href="//s.p.qq.com/pub/jump?d=AADzqr1P" target="_blank" class="game_brand-item"></a>
+                    <a href="//weibo.com/u/7268748742" target="_blank" class="game_brand-item"></a>
+                    <div class="game_brand-item" onclick="showPop('popZm')"></div>
+                </div>
+                <div class="game_footer">
+                    <a href="" class="game_logo"></a>
+                    <a href="" class="game_riot"></a>
+                    <p>COPYRIGHT © 1998 - 2019 TENCENT.ALL RIGHTS RESERVED.</p>
+                    <p>腾讯公司 版权所有</p>
+                    <p>
+                        <a href="">粤网文[2017]6138-1456号</a>
+                        <span>|</span>
+                        <a href="">（总）网出证（粤）字第057号</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- 第三页 end -->
+    </div>
+    <!-- 整页面 end -->
+
+    <!-- 弹框 start -->
+        <!-- 弹框-敬请关注 start -->
+        <div class="pop_container" id="popAttend" style="display: none;">
+            <!-- 居中的弹框容器 -->
+            <div class="pop_inner">
+                <div class="pop_title">选择预约平台</div>
+                <div class="pop_top"></div>
+                <div class="pop_mid">
+                    <div class="pop_content">
+                        <div class="platform">
+                            <div class="pop_login">
+                                <div class="pop_wx selected"></div>
+                                <div class="pop_qq"></div>
+                            </div>
+                            <a href="#" class="pop_button"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="pop_bottom"></div>
+                <div class="pop_close">
+                    X
+                </div>
+            </div>
+        </div>
+        <!-- 弹框-敬请关注 end -->
+
+        <!-- 弹框-FAQ start -->
+        <div class="pop_container" id="popFaq" style="display: none;">
+                    <!-- 居中的弹框容器 -->
+                    <div class="pop_inner">
+                        <div class="pop_top"></div>
+                        <div class="pop_mid">
+                            <div class="pop_content">
+                                <ul class="pop_faq">
+                                    <li>
+                                        <p class="pop_q">Q：活动的持续时间是多久？</p>
+                                        <p class="pop_ans">
+                                            A：活动时间：2019年10月16日至游戏不删档测试开启当天0点结束
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p class="pop_q">
+                                            Q：使用同一个帐号在各个渠道都进行了预约，预约奖励能够叠加吗？
+                                        </p>
+                                        <p class="pop_ans">
+                                            A：亲爱的召唤师，预约的奖励每个账号只能领取一份，是不能叠加的。关注并参与后续其他预约活动，还有更加丰富的奖励可以领取哦！
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p class="pop_q">Q：预约奖励应该如何领取？</p>
+                                        <p class="pop_ans">
+                                            A：
+                                            <span>使用QQ预约</span>
+                                            ：预约成功后，预约礼包将以卡券形式发放至：动态-游戏-礼包-礼券仓库，游戏不删档测试开启后可以兑换领取。对于未收到卡券的玩家，预约奖励将在游戏不删档上线后，在游戏中通过邮件发放至预约的账户中。请各位召唤师耐心等待~
+                                        </p>
+                                        <p class="pop_ans">
+                                            <span class="txit">使用微信预约</span>
+                                            ：预约成功后，预约礼包将通过卡券的形式发放至：我-卡包-卡券，游戏不删档测试开启后可以兑换领取。对于未收到卡券的玩家，预约奖励将在游戏不删档上线后，在游戏中通过邮件发放至预约的账户中。请各位召唤师耐心等待~
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p class="pop_q">Q：预约失败，遇到了问题怎么办？</p>
+                                        <p class="pop_ans">
+                                            A：如果您遇到了任何特殊情况及问题，请点击链接提交您的问题，后续会有客服为您处理：
+                                            <a href="https://kf.qq.com/touch/bill/191010selfqad0ca8c2d.html" target="_blank">
+                                                kf.qq.com/touch/bill/191010selfqad0ca8c2d.html
+                                            </a>
+                                        </p>
+                                    </li>
+                                </ul>
+                                <a href="#" class="pop_button"></a>
+                            </div>
+                        </div>
+                        <div class="pop_bottom"></div>
+                        <div class="pop_close">
+                            X
+                        </div>
+                    </div>
+        </div>
+        <!-- 弹框-FAQ end -->
+
+        <!-- 弹框-video -->
+        <div class="pop_container" id="popVideo" style="display: none;">
+            <!-- 居中的弹框容器 -->
+            <div class="pop_inner">
+                <video controls="" src="./assets/adv.mp4"></video>
+                <div class="pop_close">
+                    X
+                </div>
+            </div>
+        </div>
+
+        <!-- 弹框-detail -->
+        <div class="pop_container" id="popDetail" style="display: none;">
+            <!-- 居中的弹框容器 -->
+            <div class="pop_inner">
+                <div class="pop_top"></div>
+                <div class="pop_mid">
+                    <div class="pop_content">
+                        <p>
+                            十年陪伴，无限热爱！风靡全球的MOBA经典之作——《英雄联盟》正版手游敬请关注！
+                            <br>
+                            真正的5V5公平竞技对战，传承端游纯正体验。人气英雄，经典还原；公平竞技，实力至上；峡谷传说，掌心再现。策略、战术、意识、配合，在移动端重现峡谷战场乐趣。
+                            <br>
+                            集结吧召唤师——欢迎来到英雄联盟，是时候展现真正的技术了！
+                        </p>
+                    </div>
+                </div>
+                <div class="pop_bottom"></div>
+                <div class="pop_close">
+                    X
+                </div>
+            </div>
+        </div>
+
+        <!-- 弹框-微信 -->
+        <div class="pop_container" id="popWeixin" style="display: none;">
+            <div class="pop_inner">
+                <div class="pop_top"></div>
+                <div class="pop_mid">
+                    <div class="pop_content">
+                        <img src="./assets/qrcode_wx.jpg" alt="">
+                    </div>
+                </div>
+                <div class="pop_bottom"></div>
+                <span class="pop_close">x</span>
+            </div>
+        </div>
+
+        <!-- 弹框-Y微信 -->
+        <div class="pop_container" id="popYxq" style="display: none;">
+            <div class="pop_inner">
+                <div class="pop_top"></div>
+                <div class="pop_mid">
+                    <div class="pop_content">
+                        <img src="./assets/qrcode_yxq.jpg" alt="">
+                    </div>
+                </div>
+                <div class="pop_bottom"></div>
+                <span class="pop_close">x</span>
+            </div>
+        </div>
+
+        <!-- 弹框-掌盟 -->
+        <div class="pop_container" id="popZm" style="display: none;">
+            <div class="pop_inner">
+                <div class="pop_top"></div>
+                <div class="pop_mid">
+                    <div class="pop_content">
+                        <img src="./assets/qrcode_zm.jpg" alt="">
+                    </div>
+                </div>
+                <div class="pop_bottom"></div>
+                <span class="pop_close">x</span>
+            </div>
+        </div>
+
+    <!-- 弹框 end -->
+    
+    <!-- 通用模块 -->
+    <script src="./js/common.js"></script>
+    <!-- 菜单模块 -->
+    <script src="./js/menu.js"></script>
+    <!-- 弹框模块 -->
+    <script src="./js/pop.js"></script>
+    <!-- 页面模块 -->
+    <script src="./js/page.js"></script>
+    <!-- 新闻页-news -->
+    <script src="./js/news.js"></script>
+    <!-- 游戏页-games -->
+    <script src="./js/games.js"></script>
+</body>
+</html>
