@@ -2,13 +2,13 @@ var showPage = (function () {
     /*
      * @Author: your name
      * @Date: 2021-05-08 22:05:43
- * @LastEditTime: 2021-05-12 14:17:24
+ * @LastEditTime: 2021-05-12 17:46:18
  * @LastEditors: Please set LastEditors
      * @Description: In User Settings Edit
      * @FilePath: \英雄联盟手游移动\js\page.js
      */
 
-    var pageIndex = 2; // 显示那一个页面的标记
+    var pageIndex = 0; // 显示那一个页面的标记
     var pages = $$('.page'); // 获取所有的page页面
     var nextPageIndex = null; // 默认是没有下一个页面,来存储下一个移动后成为显示页面的标记 
 
@@ -85,12 +85,17 @@ var showPage = (function () {
         }, 500);
     }
 
-    /**
-     * @description: 处理手指移动函数
-     * @param {*} e
-     * @return {*}
-     */
-    function handler(e) {
+    // 滑动事件
+    var pageContainer = $('.page_container'); // 获得滑动的容器
+    pageContainer.ontouchstart = function (e) {
+        // 获得第一个手指按下时的位置
+        var y = e.touches[0].clientY;
+        /**
+        * @description: 处理手指移动函数
+        * @param {*} e
+        * @return {*}
+        */
+        function handler(e) {
             var moveY = e.touches[0].clientY;
             var dis = moveY - y;  // 获得手指移动的距离
             // 如果手指移动的距离不超过20，那么就不移动
@@ -103,11 +108,6 @@ var showPage = (function () {
             }
             moving(dis); // 进行页面的移动
         }
-    // 滑动事件
-    var pageContainer = $('.page_container'); // 获得滑动的容器
-    pageContainer.ontouchstart = function (e) {
-        // 获得第一个手指按下时的位置
-        var y = e.touches[0].clientY;
         // 手指移动时的距离
         pageContainer.addEventListener('touchmove',handler ,{
             passive: false,
@@ -116,9 +116,8 @@ var showPage = (function () {
         // 手指抬起完成移动
         pageContainer.ontouchend = function () {
             finishMove();
-            pageContainer.ontouchmove = pageContainer.ontouchend = null;
+            pageContainer.removeEventListener('touchmove', handler);
         }
-
     }
 
 
